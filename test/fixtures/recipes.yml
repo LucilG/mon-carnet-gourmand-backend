@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  nb_people: 1
+  prepa_time: 1
+  cooking_time: 1
+  instructions: MyText
+  collection: one
+
+two:
+  name: MyString
+  nb_people: 1
+  prepa_time: 1
+  cooking_time: 1
+  instructions: MyText
+  collection: two
