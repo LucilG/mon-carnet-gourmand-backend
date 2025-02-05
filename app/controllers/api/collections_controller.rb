@@ -22,9 +22,21 @@ class Api::CollectionsController < ApplicationController
     end
   end
 
+  # IN PROGRESS / TODO
+  # def destroy
+  #   @collection = Collection.find(params[:id])
+  #   if @collection.destroy
+  #     @collections = Collection.order(created_at: :desc)
+  #     render json: @collections
+  #   else
+  #     render json: @collection.errors, status: :unprocessable_entity
+  #   end
+  # end
+
   private
 
   def collection_params
     params.require(:collection).permit(:name)
   end
+
 end
