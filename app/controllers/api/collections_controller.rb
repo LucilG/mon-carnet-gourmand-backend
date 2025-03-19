@@ -22,16 +22,15 @@ class Api::CollectionsController < ApplicationController
     end
   end
 
-  # IN PROGRESS / TODO
-  # def destroy
-  #   @collection = Collection.find(params[:id])
-  #   if @collection.destroy
-  #     @collections = Collection.order(created_at: :desc)
-  #     render json: @collections
-  #   else
-  #     render json: @collection.errors, status: :unprocessable_entity
-  #   end
-  # end
+  def destroy
+    @collection = Collection.find(params[:id])
+    if @collection.destroy
+      @collections = Collection.order(created_at: :desc)
+      render json: @collections
+    else
+      render json: @collection.errors, status: :unprocessable_entity
+    end
+  end
 
   private
 
