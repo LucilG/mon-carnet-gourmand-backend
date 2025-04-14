@@ -32,6 +32,18 @@ class Api::CollectionsController < ApplicationController
     end
   end
 
+  def update
+    @collection = Collection.find(params[:id])
+    @collection.update(collection_params)
+    if @collection.save!
+      @collections = Collection.order(created_at: :desc)
+      render json: @collections
+    else
+      render json: @collection.errors, status: :unprocessable_entity
+    end
+
+  end
+
   private
 
   def collection_params
