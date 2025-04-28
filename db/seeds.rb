@@ -10,14 +10,16 @@
 
 
 
-
 # ####################################################################################################################
 
+# #######################################################################
 # CLEAN THE DATABASE
 puts 'Clean the database'
+Ingredient.destroy_all
 Recipe.destroy_all
 Collection.destroy_all
 
+# #######################################################################
 # ADD COLLECTIONS
 puts 'Start creating recipes...'
 fond_de_pates = Collection.create!(name: 'Fond de pâtes')
@@ -33,6 +35,7 @@ tartes = Collection.create!(name: 'Tartes & Gâteaux')
 mousses = Collection.create!(name: 'Mousses & Crèmes')
 puts 'End creating recipes...'
 
+# #######################################################################
 # ADD RECIPES
 puts 'Start creating recipes...'
 
@@ -57,3 +60,39 @@ pate_brisee = Recipe.create!(
 puts 'Creating pâte brisée ok.'
 
 puts 'End creating recipes...'
+
+# #######################################################################
+# ADD INGREDIENTS
+puts 'Start creating ingredients...'
+
+# ingredients for "gateau_au_chocolat"
+gateau_au_chocolat_farine = Ingredient.create!(
+  name: "farine",
+  unit: "g",
+  quantity: 250.0,
+  recipe_id: gateau_au_chocolat.id
+)
+gateau_au_chocolat_chocolat = Ingredient.create!(
+  name: "chocolat noir",
+  unit: "g",
+  quantity: 200.0,
+  recipe_id: gateau_au_chocolat.id
+)
+gateau_au_chocolat_oeufs = Ingredient.create!(
+  name: "oeufs",
+  unit: "unité",
+  quantity: 3,
+  recipe_id: gateau_au_chocolat.id
+)
+puts 'Creating ingredients for gâteau au chocolat ok.'
+
+# ingredients for "pate_brisee"
+pate_brisee_farine = Ingredient.create!(
+  name: "farine",
+  unit: "g",
+  quantity: 200.0,
+  recipe_id: pate_brisee.id
+)
+puts 'Creating ingredients for pâte brisée ok.'
+
+puts 'End creating ingredients...'

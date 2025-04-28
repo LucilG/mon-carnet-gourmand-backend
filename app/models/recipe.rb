@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
   belongs_to :collection
+  has_many :ingredients
 
   # Constantes
   # name
@@ -12,7 +13,7 @@ class Recipe < ApplicationRecord
   PREPATIME_MIN = 1
   PREPATIME_MAX = 600
   # cooking_time
-  COOKINGTIME_MIN = 1
+  COOKINGTIME_MIN = 0
   COOKINGTIME_MAX = 600
 
   # Validations
