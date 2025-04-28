@@ -20,4 +20,10 @@ class Api::IngredientsController < ApplicationController
       render json: @ingredient.errors, status: :unprocessable_entity
     end
   end
+
+  private
+
+  def ingredient_params
+    params.require(:ingredient).permit(:name, :quantity, :unit, :recipe_id)
+  end
 end
