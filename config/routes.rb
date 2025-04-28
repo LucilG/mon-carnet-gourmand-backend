@@ -16,5 +16,7 @@ Rails.application.routes.draw do
     resources :recipes
     get '/home', to: "recipes#home"
 
+    # ingredients
+    resources :ingredients
   end
 end
